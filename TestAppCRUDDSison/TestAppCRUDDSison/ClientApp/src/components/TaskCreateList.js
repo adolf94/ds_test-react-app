@@ -20,10 +20,10 @@ var react_router_dom_1 = require("react-router-dom");
 var TaskCreateList = /** @class */ (function (_super) {
     __extends(TaskCreateList, _super);
     //Declaring the constructor 
-    function TaskCreateList() {
+    function TaskCreateList(props) {
         var _this = 
         //here we are calling base class constructor using super()
-        _super.call(this) || this;
+        _super.call(this, props) || this;
         //here we are intializing the interface's fields using default values.
         _this.state = { taskcreateListData: [], loading: true };
         //this fetch method is responsible to get all the student record using web api.
@@ -52,7 +52,7 @@ var TaskCreateList = /** @class */ (function (_super) {
     // this method will be responsible for deleting the taskcreate record.
     TaskCreateList.prototype.FuncDelete = function (id) {
         var _this = this;
-        if (!confirm("Do you want to delete user with this Id: " + id))
+        if (!window.confirm("Do you want to delete user with this Id: " + id))
             return;
         else {
             //this fetch method will get the specific taskcreate record using TaskCreate id.

@@ -17,10 +17,10 @@ export class TaskCreateList extends React.Component<RouteComponentProps<{}>, Tas
 
 
     //Declaring the constructor 
-    constructor() {
+    constructor(props) {
 
         //here we are calling base class constructor using super()
-        super();
+        super(props)
 
         //here we are intializing the interface's fields using default values.
         this.state = { taskcreateListData: [], loading: true };
@@ -53,7 +53,7 @@ export class TaskCreateList extends React.Component<RouteComponentProps<{}>, Tas
     }
     // this method will be responsible for deleting the taskcreate record.
     private FuncDelete(id: number) {
-        if (!confirm("Do you want to delete user with this Id: " + id))
+        if (!window.confirm("Do you want to delete user with this Id: " + id))
             return;
         else {
             //this fetch method will get the specific taskcreate record using TaskCreate id.
